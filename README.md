@@ -1,5 +1,5 @@
 ## Overview 
-IFAML is a web application designed to provide a user-friendly interface for preprocessing and analyzing CSV data using various machine learning algorithms. The tool visually represents the data flow through the preprocessing steps using React Flow, making the process transparent and understandable.
+IFAML: (Interactive Frontend Analyzer tool for Machine Learning) is a web application designed to provide a user-friendly interface for preprocessing and analyzing CSV data using various machine learning algorithms. The tool visually represents the data flow through the preprocessing steps using React Flow, making the process transparent and understandable.
 
 
 ## Getting Started
