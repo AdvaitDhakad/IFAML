@@ -1,0 +1,8 @@
+{
+  "available-preprocess": [
+    {
+      "name": "LabelEncoder",
+      "params": []
+    }
+  ]
+}

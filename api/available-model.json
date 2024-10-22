@@ -1,0 +1,466 @@
+{
+  "available-model": [
+    {
+      "name": "LinearRegression",
+      "task": "Regression",
+      "data": "Supervised, numerical data",
+      "params": [
+        {
+          "name": "fit_intercept",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to calculate the intercept for this model. If set to False, no intercept will be used in calculations (i.e. data is expected to be centered)."
+        },
+        {
+          "name": "positive",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "When set to True, forces the coefficients to be positive. This option is only supported for dense arrays."
+        },
+        {
+          "name": "copy_X",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "If True, X will be copied; else, it may be overwritten."
+        },
+        {
+          "name": "n_jobs",
+          "default": "-1",
+          "dtype": "int",
+          "comment": "The number of jobs to use for the computation. This will only provide speedup in case of sufficiently large problems, that is if firstly n_targets > 1 and secondly X is sparse or if positive is set to True. None means 1 unless in a joblib.parallel_backend context. -1 means using all processors. See Glossary for more details."
+        }
+      ],
+      "return": [
+        {
+          "name": "coef_",
+          "dtype": "array",
+          "comment": "Coefficients of the features."
+        },
+        {
+          "name": "intercept_",
+          "dtype": "float",
+          "comment": "Intercept (bias) added to the decision function."
+        }
+      ]
+    },
+
+    {
+      "name": "Ridge",
+      "task": "Regression",
+      "data": "Supervised, numerical data",
+      "params": [
+        {
+          "name": "alpha",
+          "default": "1.0",
+          "dtype": "float",
+          "comment": "Constant that multiplies the L2 term, controlling regularization strength. Must be a non-negative float."
+        },
+        {
+          "name": "fit_intercept",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to fit the intercept for this model. If set to false, no intercept will be used in calculations (i.e., X and y are expected to be centered)."
+        },
+        {
+          "name": "solver",
+          "default": "auto",
+          "dtype": "str",
+          "comment": "Solver to use in the computational routines. 'auto' chooses the solver automatically based on the type of data."
+        },
+        {
+          "name": "copy_X",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "If True, X will be copied; else, it may be overwritten."
+        },
+        {
+          "name": "max_iter",
+          "default": "10",
+          "dtype": "int",
+          "comment": "Maximum number of iterations for the conjugate gradient solver. Default values depend on the solver."
+        },
+        {
+          "name": "tol",
+          "default": "0.0001",
+          "dtype": "float",
+          "comment": "The precision of the solution is determined by tol, which specifies a different convergence criterion for each solver."
+        },
+        {
+          "name": "positive",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "When set to True, forces the coefficients to be positive. Only 'lbfgs' solver is supported in this case."
+        },
+        {
+          "name": "random_state",
+          "default": "null",
+          "dtype": "int or RandomState instance",
+          "comment": "Used when solver == 'sag' or 'saga' to shuffle the data."
+        }
+      ],
+      "return": [
+        { "name": "coef_", "dtype": "array", "comment": "Weight vector(s)." },
+        {
+          "name": "intercept_",
+          "dtype": "float or ndarray of shape (n_targets,)",
+          "comment": "Independent term in the decision function. Set to 0.0 if fit_intercept = False."
+        },
+        {
+          "name": "n_iter",
+          "dtype": "None or ndarray of shape (n_targets,)",
+          "comment": "Actual number of iterations for each target. Available only for 'sag' and 'lsqr' solvers. Other solvers will return None. New in version 0.17."
+        },
+        {
+          "name": "n_features_in",
+          "dtype": "int",
+          "comment": "Number of features seen during fit. New in version 0.24."
+        },
+        {
+          "name": "feature_names_in",
+          "dtype": "ndarray of shape (n_features_in_,)",
+          "comment": "Array of feature names, indicating the order of features in the training data. New in version 0.24."
+        }
+      ]
+    },
+
+    {
+      "name": "Lasso",
+      "task": "Regression",
+      "data": "Supervised, numerical data",
+      "params": [
+        {
+          "name": "alpha",
+          "default": "1.0",
+          "dtype": "float",
+          "comment": "Constant that multiplies the L1 term, controlling regularization strength. Must be a non-negative float."
+        },
+        {
+          "name": "fit_intercept",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to calculate the intercept for this model. If set to False, no intercept will be used in calculations (i.e., data is expected to be centered)."
+        },
+        {
+          "name": "precompute",
+          "default": "False",
+          "dtype": "bool or array-like of shape (n_features, n_features)",
+          "comment": "Whether to use a precomputed Gram matrix to speed up calculations. For sparse input, this option is always False to preserve sparsity."
+        },
+        {
+          "name": "copy_X",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "If True, X will be copied; else, it may be overwritten."
+        },
+        {
+          "name": "max_iter",
+          "default": "1000",
+          "dtype": "int",
+          "comment": "The maximum number of iterations."
+        },
+        {
+          "name": "tol",
+          "default": "0.0001",
+          "dtype": "float",
+          "comment": "The tolerance for the optimization: if the updates are smaller than tol, the optimization code checks the dual gap for optimality and continues until it is smaller than tol."
+        },
+        {
+          "name": "warm_start",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "When set to True, reuse the solution of the previous call to fit as initialization, otherwise, just erase the previous solution. See the Glossary."
+        },
+        {
+          "name": "positive",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "When set to True, forces the coefficients to be positive."
+        },
+        {
+          "name": "random_state",
+          "default": "null",
+          "dtype": "int or RandomState instance",
+          "comment": "The seed of the pseudo-random number generator that selects a random feature to update. Used when selection == 'random'. Pass an int for reproducible output across multiple function calls. See Glossary."
+        },
+        {
+          "name": "selection",
+          "default": "cyclic",
+          "dtype": "str ",
+          "comment": "If set to 'random', a random coefficient is updated every iteration rather than looping over features sequentially by default."
+        }
+      ],
+      "return": [
+        {
+          "name": "coef_",
+          "dtype": "array",
+          "comment": "Parameter vector (w in the cost function formula)."
+        },
+        {
+          "name": "dual_gap",
+          "dtype": "float or ndarray of shape (n_targets,)",
+          "comment": "Given param alpha, the dual gaps at the end of the optimization, same shape as each observation of y."
+        },
+        {
+          "name": "sparse_coef",
+          "dtype": "sparse matrix of shape (n_features, 1) or (n_targets, n_features)",
+          "comment": "Sparse representation of the fitted coef_."
+        },
+        {
+          "name": "intercept_",
+          "dtype": "float or ndarray of shape (n_targets,)",
+          "comment": "Independent term in the decision function."
+        },
+        {
+          "name": "n_iter",
+          "dtype": "int or list of int",
+          "comment": "Number of iterations run by the coordinate descent solver to reach the specified tolerance."
+        },
+        {
+          "name": "n_features_in",
+          "dtype": "int",
+          "comment": "Number of features seen during fit. New in version 0.24."
+        },
+        {
+          "name": "feature_names_in",
+          "dtype": "ndarray of shape (n_features_in_,)",
+          "comment": "Names of features seen during fit. Defined only when X has feature names that are all strings. New in version 0.24."
+        }
+      ]
+    },
+
+    {
+      "name": "DecisionTreeRegressor",
+      "task": "Regression",
+      "data": "Supervised, numerical data",
+      "params": [
+        {
+          "name": "criterion",
+          "default": "mse",
+          "dtype": "str",
+          "comment": "The function to measure the quality of a split."
+        },
+        {
+          "name": "max_depth",
+          "default": "None",
+          "dtype": "int",
+          "comment": "The maximum depth of the tree."
+        },
+        {
+          "name": "min_samples_split",
+          "default": "2",
+          "dtype": "int or float",
+          "comment": "The minimum number of samples required to split an internal node."
+        },
+        {
+          "name": "min_samples_leaf",
+          "default": "1",
+          "dtype": "int or float",
+          "comment": "The minimum number of samples required to be at a leaf node."
+        },
+        {
+          "name": "min_weight_fraction_leaf",
+          "default": "0.0",
+          "dtype": "float",
+          "comment": "The minimum weighted fraction of the sum total of weights required to be at a leaf node."
+        },
+        {
+          "name": "max_features",
+          "default": "None",
+          "dtype": "int, float or str",
+          "comment": "The number of features to consider when looking for the best split."
+        },
+        {
+          "name": "random_state",
+          "default": "None",
+          "dtype": "int, RandomState or None",
+          "comment": "Controls the randomness of the estimator."
+        },
+        {
+          "name": "min_impurity_decrease",
+          "default": "0.0",
+          "dtype": "float",
+          "comment": "A node will be split if this split induces a decrease of the impurity greater than or equal to this value."
+        },
+        {
+          "name": "ccp_alpha",
+          "default": "0.0",
+          "dtype": "non-negative float",
+          "comment": "Complexity parameter used for Minimal Cost-Complexity Pruning."
+        }
+      ],
+      "return": [
+        {
+          "name": "predict",
+          "dtype": "array",
+          "comment": "Array of predictions."
+        },
+        {
+          "name": "predict_proba",
+          "dtype": "array",
+          "comment": "Array of class probabilities."
+        },
+        {
+          "name": "max_leaf_nodes",
+          "dtype": "int",
+          "comment": "The maximum number of leaf nodes in best-first fashion."
+        }
+      ]
+    },
+
+    {
+      "name": "LogisticRegression",
+      "task": "Classification",
+      "data": "Supervised, numerical data",
+      "params": [
+        {
+          "name": "C",
+          "default": "1.0",
+          "dtype": "float",
+          "comment": "Inverse of regularization strength; must be a positive float. Smaller values specify stronger regularization."
+        },
+        {
+          "name": "penalty",
+          "default": "l2",
+          "dtype": "str",
+          "comment": "Specify the norm of the penalty. 'l2': L2 penalty term (default), 'l1': L1 penalty term, 'elasticnet': both L1 and L2 penalty terms. 'None': no penalty added. Deprecated since version 1.2; use None instead."
+        },
+        { "name": "dual", "default": "False", "dtype": "bool" },
+        { "name": "tol", "default": "0.0001", "dtype": "float" },
+        { "name": "intercept_scaling", "default": "1", "dtype": "float" },
+        {
+          "name": "class_weight",
+          "default": "None",
+          "dtype": "dict or 'balanced'"
+        },
+        {
+          "name": "fit_intercept",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Specifies if a constant (a.k.a. bias or intercept) should be added to the decision function."
+        },
+        {
+          "name": "random_state",
+          "default": "None",
+          "dtype": "int or RandomState instance"
+        },
+        { "name": "solver", "default": "lbfgs", "dtype": "str" },
+        {
+          "name": "max_iter",
+          "default": "100",
+          "dtype": "int",
+          "comment": "Maximum number of iterations taken for the solvers to converge."
+        },
+        {
+          "name": "multi_class",
+          "default": "'auto'",
+          "dtype": "'auto', 'ovr', 'multinomial'",
+          "comment": "If the option chosen is ‘ovr’, then a binary problem is fit for each label. For ‘multinomial’ the loss minimized is the multinomial loss fit across the entire probability distribution."
+        },
+        {
+          "name": "verbose",
+          "default": "0",
+          "dtype": "int",
+          "comment": "For the liblinear and lbfgs solvers set verbose to any positive number for verbosity."
+        },
+        {
+          "name": "warm_start",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "When set to True, reuse the solution of the previous call to fit as initialization."
+        },
+        {
+          "name": "n_jobs",
+          "default": "-1",
+          "dtype": "int",
+          "comment": "Number of CPU cores used when parallelizing over classes if multi_class='ovr'."
+        },
+        {
+          "name": "l1_ratio",
+          "default": "None",
+          "dtype": "float",
+          "comment": "The Elastic-Net mixing parameter, with 0 <= l1_ratio <= 1. Only used if penalty='elasticnet'."
+        }
+      ],
+      "return": [
+        {
+          "name": "coef_",
+          "dtype": "array",
+          "comment": "Coefficient of the features."
+        },
+        {
+          "name": "intercept_",
+          "dtype": "float",
+          "comment": "Intercept (bias) added to the decision function."
+        }
+      ]
+    },
+
+    {
+      "name": "KNeighborsClassifier",
+      "task": "Classification",
+      "data": "Supervised, binary data",
+      "params": [
+        {
+          "name": "n_neighbors",
+          "default": "5",
+          "dtype": "int",
+          "comment": "Number of neighbors to use by default for kneighbors queries."
+        },
+        {
+          "name": "weights",
+          "default": "uniform",
+          "dtype": "str",
+          "comment": "Weight function used in prediction. Possible values: 'uniform' or 'distance'."
+        },
+        {
+          "name": "algorithm",
+          "default": "auto",
+          "dtype": "str",
+          "comment": "Algorithm used to compute the nearest neighbors. Possible values: 'auto', 'ball_tree', 'kd_tree', 'brute'."
+        },
+        {
+          "name": "leaf_size",
+          "default": "30",
+          "dtype": "int",
+          "comment": "Leaf size passed to BallTree or KDTree."
+        },
+        {
+          "name": "p",
+          "default": "2",
+          "dtype": "float",
+          "comment": "Power parameter for the Minkowski metric. When p = 1, equivalent to using Manhattan distance, and Euclidean distance for p = 2."
+        },
+        {
+          "name": "metric",
+          "default": "minkowski",
+          "dtype": "str",
+          "comment": "Metric to use for distance computation."
+        },
+        {
+          "name": "metric_params",
+          "default": "None",
+          "dtype": "dict",
+          "comment": "Additional keyword arguments for the metric function."
+        },
+        {
+          "name": "n_jobs",
+          "default": "-1",
+          "dtype": "int",
+          "comment": "The number of parallel jobs to run for neighbors search."
+        }
+      ],
+      "return": [
+        {
+          "name": "predict",
+          "dtype": "array",
+          "comment": "The predicted values for each sample."
+        },
+        {
+          "name": "predict_proba",
+          "dtype": "array",
+          "comment": "Class probability estimates for the input samples."
+        }
+      ]
+    }
+  ]
+}

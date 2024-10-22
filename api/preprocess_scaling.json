@@ -1,0 +1,50 @@
+{
+  "available-preprocess": [
+    {
+      "name": "StandardScaler",
+      "params": [
+        {
+          "name": "copy",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to make a copy of the input data."
+        },
+        {
+          "name": "with_mean",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to center the data before scaling."
+        },
+        {
+          "name": "with_std",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to scale the data to unit variance."
+        }
+      ]
+    },
+    {
+      "name": "MinMaxScaler",
+      "params": [
+        {
+          "name": "feature_range",
+          "default": "(0, 1)",
+          "dtype": "tuple",
+          "comment": "The desired range of transformed data."
+        },
+        {
+          "name": "copy",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to make a copy of the input data."
+        },
+        {
+          "name": "clip",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "Whether to clip the transformed data to the feature range."
+        }
+      ]
+    }
+  ]
+}

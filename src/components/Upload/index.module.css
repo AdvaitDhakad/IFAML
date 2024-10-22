@@ -1,0 +1,39 @@
+.wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-width: 2;
+  border-radius: 2;
+  border-color: #ababab;
+  border-style: dashed;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  outline: none;
+  transition: border 0.24s ease-in-out;
+  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
+  border-radius: 20px;
+}
+
+.focused {
+  border-color: #2196f3;
+}
+
+.accepted {
+  border-color: #00e676;
+}
+
+.rejected {
+  border-color: #ff1744;
+}
+
+.wrapper aside {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

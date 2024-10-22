@@ -1,0 +1,39 @@
+{
+  "available-preprocess": [
+    {
+      "name": "RobustScaler",
+      "params": [
+        {
+          "name": "with_centering",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to center the data before scaling."
+        },
+        {
+          "name": "with_scaling",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to scale the data according to the interquartile range."
+        },
+        {
+          "name": "copy",
+          "default": "True",
+          "dtype": "bool",
+          "comment": "Whether to make a copy of the input data."
+        },
+        {
+          "name": "quantile_range",
+          "default": "(25.0, 75.0)",
+          "dtype": "tuple",
+          "comment": "The interquartile range used to scale the data."
+        },
+        {
+          "name": "unit_variance",
+          "default": "False",
+          "dtype": "bool",
+          "comment": "Whether to ensure unit variance of the scaled data."
+        }
+      ]
+    }
+  ]
+}
